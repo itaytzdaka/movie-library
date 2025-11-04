@@ -1,25 +1,53 @@
 <x-layout>
+    <div class="show">
+        <div class="container">
+            
+            <h2>{{$movie->title}}</h2>    
+            <div class="row">
 
-    <h2>{{$movie->title}}</h2>    
-    <img src="{{ $movie->poster_url }}" alt="{{ $movie->title }}">
-    <p>directore: {{ $movie->director }}</p>
-    <p>minutes: {{ $movie->runtime_minutes }}</p>
-    <p>actores: {{ $movie->actors }}</p>
-    <p>genre: {{ $movie->genre }}</p>
+                <img src="{{ $movie->poster_url }}" alt="{{ $movie->title }}">
+                
+                <div class="details column">
+                    <table>
+                        <tr>
+                            <td>directore:</td>
+                            <td>{{ $movie->director }}</td>
+                        </tr>
+                        <tr>
+                            <td>minutes:</td>
+                            <td>{{ $movie->runtime_minutes }}</td>
+                        </tr>
+                        <tr>
+                            <td>actores:</td>
+                            <td>{{ $movie->actors }}</td>
+                        </tr>
+                        <tr>
+                            <td>genre:</td>
+                            <td>{{ $movie->genre }}</td>
+                        </tr>
+                    </table>
 
 
 
-    @if(auth()->check())
-        <form action="{{ route('movies.destroy', $movie) }}" method="POST">
-            @csrf
-            @method('DELETE')
+                    @if(auth()->check())
+                        <form action="{{ route('movies.destroy', $movie) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
 
-            <button type="submit">Delete movie</button>
-        </form>
+                            <div class="row">
+                                <a href="{{ route('movies.edit', $movie) }}">
+                                    <button type="button" class="alert">Edit movie</button>
+                                </a>
+                                <button type="submit" class="danger">Delete movie</button>
+                            </div>
+                        </form>
 
-        <a href="{{ route('movies.edit', $movie) }}">
-            <button>Edit movie</button>
-        </a>
-    @endif
+
+                    @endif
+                </div>
+                
+            </div>
+        </div>
+    </div>
         
 </x-layout>

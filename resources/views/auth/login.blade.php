@@ -1,42 +1,48 @@
 <x-layout>
-    <h2></h2>
 
-    <form action="{{ Route('auth.login') }}" method="POST">
+    <div class="login">
+        <div class="container">
+            <h2>login page</h2>
 
-        @csrf
+            <form class="form-grid" action="{{ Route('auth.login') }}" method="POST">
 
-        <h2>login page</h2>
-
-
-        <label>User name:</label>
-        <input 
-            type="text"
-            id="user_name"
-            name="user_name"
-            value="{{ old('user_name') }}"
-            require
-        >
+                @csrf
 
 
-        <label>Password:</label>
-        <input 
-            type="password"
-            id="password"
-            name="password"
-            value="{{ old('password') }}"
-        >
+
+                <label>User name:</label>
+                <input 
+                    type="text"
+                    id="user_name"
+                    name="user_name"
+                    value="{{ old('user_name') }}"
+                    require
+                >
 
 
-        <button type="submit">Login</button>
+                <label>Password:</label>
+                <input 
+                    type="password"
+                    id="password"
+                    name="password"
+                    value="{{ old('password') }}"
+                >
 
-        @if ($errors->any())
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
+
+                <button type="submit" class="button primary">Login</button>
+
+                @if ($errors->any())
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                
+            </form>
+        </div>
         
-    </form>
+
+    </div>
 
 </x-layout>

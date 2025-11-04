@@ -9,3 +9,169 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+body{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background-color: black;
+    color: aliceblue;
+    font-size: 1.2rem
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+h2 {
+    @apply text-xl font-semibold my-4;
+}
+
+table{
+    @apply border-separate border-spacing-4 -m-4
+}
+
+nav{
+    background-color: rgb(18, 18, 18);
+    color: white;
+    font-weight: bolder;
+
+    div{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+
+    button:hover, .button:hover{
+        background-color: rgb(29, 29, 29);
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+button, .button{
+    height: 35px;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 25px;        
+    cursor: pointer;
+}
+
+.section{
+    margin: 5% 0;
+}
+
+input{
+    color: #333333;
+    background-color: white;
+    border: #1a1a1a83 1px solid;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 1.5rem; /* spacing between items */
+  margin-top: 2rem;
+}
+
+.card{
+
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    text-align: center;
+
+    img{
+        height: 90%;
+    }
+
+    div{
+        margin: 5px 0;
+        height: 55px;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    span:hover{
+        text-decoration: underline;
+    }
+}
+
+.container{
+    padding: 15px 0;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.user-menu{
+    display: flex;
+}
+
+.form-grid{
+    display: grid;
+    grid-template-columns: 200px 1fr; /* label | input */
+    gap: 0.5rem 1rem;
+    align-items: center;
+}
+
+.show , .edit, .create{
+    height: 100%;
+    padding: 5% 0;
+    background-color: #333333;
+
+    img{
+        border-radius: 15px;
+    }
+
+    .details{
+        flex-grow: 1;
+    }
+}
+
+.row{
+    display: flex;
+    gap: 5%;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.danger{
+    background-color: rgb(175, 51, 51);
+    border: rgb(150, 0, 0) 2px solid;
+}
+
+.danger:hover{
+    background-color: rgb(210, 0, 0);
+}
+
+
+.alert{
+    background-color: rgb(210, 121, 25);
+    border: rgb(170, 84, 4) 2px solid;
+}
+
+.alert:hover{
+    background-color: rgb(255, 145, 0);
+}
+
+.primary{
+    background-color: rgb(202, 166, 5);
+    border: #c6a201 2px solid;
+}
+
+.primary:hover{
+    background-color: #d6af02;
+}

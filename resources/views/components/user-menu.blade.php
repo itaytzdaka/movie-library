@@ -1,7 +1,7 @@
 @if(auth()->check())
 
     <div class="user-menu">
-        <span>{{ auth()->user()->user_name }}</span>
+        <span>Hello {{ auth()->user()->user_name }}</span>
 
         <form action="{{ route('auth.logout') }}" method="POST">
             @csrf
@@ -13,6 +13,6 @@
 
 @else
 
-    <a href="{{ route('auth.login') }}">Login</a>
+    <a class="button" href="{{ route('auth.login') }}">Login</a>
 
 @endif  
