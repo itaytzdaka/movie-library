@@ -5,6 +5,13 @@
     <title>Movies Library</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="{{ route('movies.index') }}">home</a>
+            <a href="{{ route('movies.create') }}">add movie</a>
+            <a href="{{ route('auth.login') }}">login</a>
+        </nav>
+    </header>
     <main class="container">
         {{ $slot }}
     </main>
