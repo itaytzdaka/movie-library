@@ -4,16 +4,14 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\OmdbController;
 
 
 // admin routes
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/add', function (){
-        return view('movies.create');
-    })->name('movies.create');
+    Route::get('/add', [MovieController::class, 'create'])->name('movies.create');
 
     Route::post('/add', [MovieController::class, 'store'])->name('movies.store');
 
@@ -42,14 +40,4 @@ Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::get('/{movie}', [MovieController::class, 'show'])->name('movies.show');
 
-
-
-/**
- * 
- *  / -> movies                            V
- *  /{id} -> movie details                 V
- *  /login -> login page fo admin          V
- *  /{id}/edit -> admin page for edit      
- *  /add -> admin page for add a movie     V
- * 
- */
+Route::post('/import', [OmdbController::class, 'search'])->name('movies.import');

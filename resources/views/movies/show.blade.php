@@ -9,7 +9,7 @@
 
 
 
-    @if(auth()->check() && auth()->user()->is_admin)
+    @if(auth()->check())
         <form action="{{ route('movies.destroy', $movie) }}" method="POST">
             @csrf
             @method('DELETE')

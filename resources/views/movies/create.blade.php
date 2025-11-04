@@ -1,18 +1,29 @@
 <x-layout>
 
+    <h2>add Movie</h2>
+
+
+    <form action="{{ route('movies.import') }}" method="POST">
+        @csrf
+
+        <label>Search OMDb:</label>
+        <input type="text" name="search" value="{{ old('search') }}">
+
+        <button type="submit">Search</button>
+
+    </form>
+
+
     <form action="{{ Route('movies.store')}}" method="POST">
 
         @csrf
-
-        <h2>add Movie</h2>
-
 
         <label>title:</label>
         <input 
             type="text"
             id="title"
             name="title"
-            value="{{ old('title') }}"
+            value="{{ old('title', $movie['title'] ?? '') }}"
             require
         >
 
@@ -22,7 +33,7 @@
             type="text"
             id="poster_url"
             name="poster_url"
-            value="{{ old('poster_url') }}"
+            value="{{ old('poster_url', $movie['poster_url'] ?? '') }}"
         >
 
 
@@ -31,7 +42,7 @@
             type="text"
             id="director"
             name="director"
-            value="{{ old('director') }}"
+            value="{{ old('director', $movie['director'] ?? '') }}"
         >
 
 
@@ -40,7 +51,7 @@
             type="number"
             id="runtime_minutes"
             name="runtime_minutes"
-            value="{{ old('runtime_minutes') }}"
+            value="{{ old('runtime_minutes', $movie['runtime_minutes'] ?? '') }}"
         >
 
 
@@ -49,7 +60,7 @@
             type="text"
             id="actors"
             name="actors"
-            value="{{ old('actors') }}"
+            value="{{ old('actors', $movie['actors'] ?? '') }}"
         >
 
 
@@ -58,7 +69,7 @@
             type="text"
             id="genre"
             name="genre"
-            value="{{ old('genre') }}"
+            value="{{ old('genre', $movie['genre'] ?? '') }}"
         >
 
         <button type="submit">Create movie</button>

@@ -13,13 +13,10 @@ class UserSeeder extends Seeder
     public function run(): void
     {
 
-        $user = User::create([
+        User::create([
             'user_name' => 'Itay',
             'password' => bcrypt('Aa123456'),
         ]);
-
-        $user->is_admin = true;
-        $user->save();
 
     }
 }

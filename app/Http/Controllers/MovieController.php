@@ -51,6 +51,14 @@ class MovieController extends Controller
 
 
 
+    public function create(){
+
+        $movie = session('movie', null);
+
+        return view('movies.create', compact('movie'));
+    }
+
+
     public function store(Request $request){
 
         $validated = $request-> validate([

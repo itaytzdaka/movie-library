@@ -8,7 +8,7 @@
     <header>
         <nav>
             <a href="{{ route('movies.index') }}">home</a>
-            @if(auth()->check() && auth()->user()->is_admin)
+            @if(auth()->check())
                 <a href="{{ route('movies.create') }}">add movie</a>
             @endif
 
