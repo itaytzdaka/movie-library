@@ -8,8 +8,12 @@
     <header>
         <nav>
             <a href="{{ route('movies.index') }}">home</a>
-            <a href="{{ route('movies.create') }}">add movie</a>
-            <a href="{{ route('auth.login') }}">login</a>
+            @if(auth()->check() && auth()->user()->is_admin)
+                <a href="{{ route('movies.create') }}">add movie</a>
+            @endif
+
+            <x-user-menu />
+            
         </nav>
     </header>
     <main class="container">

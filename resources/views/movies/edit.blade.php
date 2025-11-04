@@ -1,67 +1,68 @@
 <x-layout>
 
-    <form action="{{ Route('movies.store')}}" method="POST">
+    <form action="{{ Route('movies.update', $movie) }}" method="POST">
 
         @csrf
+        @method('PUT')
 
-        <h2>add Movie</h2>
+        <h2>Edit Movie</h2>
 
 
-        <label>title:</label>
+        <label>Title:</label>
         <input 
             type="text"
             id="title"
             name="title"
-            value="{{ old('title') }}"
+            value="{{ old('title', $movie->title) }}"
             require
         >
 
 
-        <label>poster_url:</label>
+        <label>Poster_url:</label>
         <input 
             type="text"
             id="poster_url"
             name="poster_url"
-            value="{{ old('poster_url') }}"
+            value="{{ old('poster_url', $movie->poster_url) }}"
         >
 
 
-        <label>director:</label>
+        <label>Director:</label>
         <input 
             type="text"
             id="director"
             name="director"
-            value="{{ old('director') }}"
+            value="{{ old('director', $movie->director) }}"
         >
 
 
-        <label>runtime_minutes:</label>
+        <label>Runtime_minutes:</label>
         <input 
             type="number"
             id="runtime_minutes"
             name="runtime_minutes"
-            value="{{ old('runtime_minutes') }}"
+            value="{{ old('runtime_minutes', $movie->runtime_minutes) }}"
         >
 
 
-        <label>actors:</label>
+        <label>Actors:</label>
         <input 
             type="text"
             id="actors"
             name="actors"
-            value="{{ old('actors') }}"
+            value="{{ old('actors', $movie->actors) }}"
         >
 
 
-        <label>genre:</label>
+        <label>Genre:</label>
         <input 
             type="text"
             id="genre"
             name="genre"
-            value="{{ old('genre') }}"
+            value="{{ old('genre', $movie->genre) }}"
         >
 
-        <button type="submit">Create movie</button>
+        <button type="submit">Update movie</button>
 
         @if ($errors->any())
             <ul>

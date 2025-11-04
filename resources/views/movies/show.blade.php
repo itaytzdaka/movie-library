@@ -7,11 +7,19 @@
     <p>actores: {{ $movie->actors }}</p>
     <p>genre: {{ $movie->genre }}</p>
 
-    <form action="{{ route('movies.delete', $movie) }}" method="POST">
-        @csrf
-        @method('DELETE')
 
-        <button type="submit">Delete movie</button>
-    </form>
+
+    @if(auth()->check() && auth()->user()->is_admin)
+        <form action="{{ route('movies.destroy', $movie) }}" method="POST">
+            @csrf
+            @method('DELETE')
+
+            <button type="submit">Delete movie</button>
+        </form>
+
+        <a href="{{ route('movies.edit', $movie) }}">
+            <button>Edit movie</button>
+        </a>
+    @endif
         
 </x-layout>
