@@ -26,10 +26,6 @@ h2 {
     @apply text-xl font-semibold my-4;
 }
 
-table{
-    @apply border-separate border-spacing-4 -m-4
-}
-
 nav{
     background-color: rgb(18, 18, 18);
     color: white;
@@ -50,6 +46,10 @@ nav{
         display: flex;
         justify-content: space-between;
     }
+}
+
+table{
+    @apply border-separate border-spacing-4 -m-4
 }
 
 button, .button{
@@ -82,56 +82,6 @@ input{
   margin-top: 2rem;
 }
 
-.card{
-
-    display: flex;
-    flex-direction: column;
-    background-color: #1a1a1a;
-    border-radius: 15px;
-    text-align: center;
-    overflow: hidden;
-
-
-    img{
-        display: block;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.3s ease;
-    }
-
-    .image:hover img{
-        transform: scale(1.05);
-    }
-    
-    .image{
-        height: 90%;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .image:after{
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(255, 255, 255, 0);
-        transition: background 0.3s ease;
-    }
-
-    .image:hover::after {
-        background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
-    }
-
-    div{
-        height: 55px;
-        overflow-y: auto;
-        scrollbar-width: none;
-    }
-
-    span:hover{
-        text-decoration: underline;
-    }
-}
-
 .container{
     padding: 15px 0;
     margin: auto;
@@ -161,13 +111,13 @@ input{
     .details{
         flex-grow: 1;
     }
-}
 
-.genre{
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 15px;
-    border: rgba(255, 255, 255, 0.605) 0.5px solid;
+    .genre{
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 15px;
+        border: rgba(255, 255, 255, 0.605) 0.5px solid;
+    }
 }
 
 .row{

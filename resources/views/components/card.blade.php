@@ -1,3 +1,9 @@
+
+@push('styles')
+  @vite('resources/css/card.css')
+@endpush
+
+
 @props(['movie'])
 
 <a href="{{ route('movies.show', $movie) }}" class="card">

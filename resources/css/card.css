@@ -1,0 +1,49 @@
+.card{
+
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+
+
+    img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    .image:hover img{
+        transform: scale(1.05);
+    }
+    
+    .image{
+        height: 90%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image:after{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0);
+        transition: background 0.3s ease;
+    }
+
+    .image:hover::after {
+        background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+    }
+
+    div{
+        height: 55px;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    span:hover{
+        text-decoration: underline;
+    }
+}
