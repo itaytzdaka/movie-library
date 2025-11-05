@@ -58,6 +58,35 @@ input{
     padding: 3px;
 }
 
+select {
+  width: 100%;
+  min-height: 140px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+select:focus {
+  border-color: #8bba15ff;
+
+}
+
+select option {
+  margin: 5px;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+/* Highlight selected items */
+select option:checked{
+  color: white;
+}
+
 .movies {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
@@ -140,4 +169,28 @@ input{
 
 .primary:hover{
     background-color: #d6af02;
+}
+
+.success{
+    color: #4a9018ff;
+}
+
+
+@media (max-width: 1220px) {
+  .container {
+    padding: 0 10%;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr); /* tablets: 2 columns */
+  }
+}
+
+@media (max-width: 600px) {
+  .movies {
+    grid-template-columns: repeat(1, 1fr); /* mobile: 1 column */
+  }
 }

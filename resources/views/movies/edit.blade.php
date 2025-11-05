@@ -12,7 +12,7 @@
 
                 <div class="form-grid">
 
-                    <label>Title:</label>
+                    <label for="title">Title:</label>
                     <input 
                         type="text"
                         id="title"
@@ -22,7 +22,7 @@
                     >
 
 
-                    <label>Poster_url:</label>
+                    <label for="poster_url">Poster url:</label>
                     <input 
                         type="text"
                         id="poster_url"
@@ -31,7 +31,7 @@
                     >
 
 
-                    <label>Director:</label>
+                    <label for="director">Director:</label>
                     <input 
                         type="text"
                         id="director"
@@ -40,7 +40,7 @@
                     >
 
 
-                    <label>Runtime_minutes:</label>
+                    <label for="runtime_minutes">Runtime minutes:</label>
                     <input 
                         type="number"
                         id="runtime_minutes"
@@ -49,7 +49,7 @@
                     >
 
 
-                    <label>Actors:</label>
+                    <label for="actors">Actors:</label>
                     <input 
                         type="text"
                         id="actors"
@@ -58,7 +58,16 @@
                     >
 
 
-                    <label>Genre load:</label>
+                    <label for="actors">Release Date:</label>
+                    <input 
+                        type="Date"
+                        id="release_date"
+                        name="release_date"
+                        value="{{ old('release_date', $movie->release_date->format('Y-m-d')) }}"
+                    >
+
+
+                    <label for="genres">Genre load:</label>
                     <select name="genre[]" id="genres" multiple size="6">
                         @foreach($allGenres as $genre)
                             <option value="{{ $genre->name }}"

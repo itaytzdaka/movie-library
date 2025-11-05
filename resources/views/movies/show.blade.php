@@ -5,24 +5,28 @@
             <h2>{{$movie->title}}</h2>    
             <div class="row">
 
-                <img src="{{ $movie->poster_url }}" alt="{{ $movie->title }}">
+                <img src="{{ $movie->poster_url ?: asset('images/fallback.jpg')  }}" alt="{{ $movie->title }}">
 
                 <div class="details column">
                     <table>
                         <tr>
-                            <td>directore:</td>
+                            <td>Directore:</td>
                             <td>{{ $movie->director }}</td>
                         </tr>
                         <tr>
-                            <td>minutes:</td>
-                            <td>{{ $movie->runtime_minutes }}</td>
+                            <td>Time:</td>
+                            <td>{{ $movie->runtime_formatted }}</td>
                         </tr>
                         <tr>
-                            <td>actores:</td>
+                            <td>Actores:</td>
                             <td>{{ $movie->actors }}</td>
                         </tr>
                         <tr>
-                            <td>genre:</td>
+                            <td>Release date:</td>
+                            <td>{{ $movie->release_date?->format('d/m/Y')}}</td>
+                        </tr>
+                        <tr>
+                            <td>Genre:</td>
                             <td>
                                 @foreach($movie->genres as $genre)
                                     <div class="genre">

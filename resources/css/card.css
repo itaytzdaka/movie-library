@@ -1,5 +1,6 @@
 .card{
 
+    aspect-ratio: 2 / 3;
     display: flex;
     flex-direction: column;
     background-color: #1a1a1a;
@@ -7,22 +8,22 @@
     text-align: center;
     overflow: hidden;
 
+    
+    .image{
+        
+        position: relative;
+        overflow: hidden;
 
-    img{
-        display: block;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.3s ease;
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
     }
 
     .image:hover img{
         transform: scale(1.05);
-    }
-    
-    .image{
-        height: 400px;
-        position: relative;
-        overflow: hidden;
     }
 
     .image:after{
@@ -37,7 +38,7 @@
         background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
     }
 
-    div{
+    .name{
         height: 55px;
         overflow-y: auto;
         scrollbar-width: none;
