@@ -33,8 +33,8 @@ Route::get('/', [MovieController::class, 'index'])->name('movies.index');
 
 
 Route::get('/login', function (){
-    return view('auth.login');
-})->name('auth.login');
+    return view('login');
+})->name('login');
 
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 

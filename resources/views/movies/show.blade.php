@@ -23,10 +23,6 @@
                         </tr>
                         <tr>
                             <td>genre:</td>
-                            <td>{{ $movie->genre }}</td>
-                        </tr>
-                        <tr>
-                            <td>genre load:</td>
                             <td>
                                 @foreach($movie->genres as $genre)
                                     <div class="genre">

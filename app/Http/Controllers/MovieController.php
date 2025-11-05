@@ -4,17 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use App\Models\Genre;
+use App\Services\MovieService;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
 
 
-    public function index(){
+    public function index(Request $request, MovieService $movieService){
+
+        $genres = Genre::orderBy('name')->get();
+        $genresSelected = $request->query('genre');
 
         $movies = Movie::with('genres')->get();
 
-        return view('movies.index', compact('movies'));
+        $movies = $movieService->getMoviesByGenres($genresSelected, matchAll: true);
+
+
+        return view('movies.index', compact('movies', 'genresSelected', 'genres'));
     }
 
 
