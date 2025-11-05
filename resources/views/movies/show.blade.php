@@ -6,7 +6,7 @@
             <div class="row">
 
                 <img src="{{ $movie->poster_url }}" alt="{{ $movie->title }}">
-                
+
                 <div class="details column">
                     <table>
                         <tr>
@@ -24,6 +24,17 @@
                         <tr>
                             <td>genre:</td>
                             <td>{{ $movie->genre }}</td>
+                        </tr>
+                        <tr>
+                            <td>genre load:</td>
+                            <td>
+                                @foreach($movie->genres as $genre)
+                                    <div class="genre">
+                                        {{$genre->name}}
+                                    </div>
+                                    
+                                @endforeach
+                            </td>
                         </tr>
                     </table>
 

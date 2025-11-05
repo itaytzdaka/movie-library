@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Movie;
+use App\Models\Genre;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +14,7 @@ class MovieSeeder extends Seeder
     public function run(): void
     {
 
-        Movie::create([
+        $movie = Movie::create([
 
             'title' => 'The Shawshank Redemption',
             'release_date' => date('Y-m-d', strtotime('14 Oct 1994')),
@@ -24,8 +25,12 @@ class MovieSeeder extends Seeder
             'genre' => 'Drama',
         ]);
 
+        $genres = Genre::whereIn('name', ['Drama'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+        $movie = Movie::create([
 
             'title' => 'The Godfather',
             'release_date' => date('Y-m-d', strtotime('24 Mar 1972')),
@@ -36,8 +41,12 @@ class MovieSeeder extends Seeder
             'genre' => 'Crime, Drama',
         ]);
 
+        $genres = Genre::whereIn('name', ['Crime','Drama'])->get();
+        $movie->genres()->attach($genres);
+
+
         
-        Movie::create([
+        $movie = Movie::create([
 
             'title' => 'Inception',
             'release_date' => date('Y-m-d', strtotime('16 Jul 2010')),
@@ -48,8 +57,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Action, Adventure, Sci-Fi',
         ]);
 
+        $genres = Genre::whereIn('name', ['Action','Adventure','Sci-Fi'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Titanic',
             'release_date' => date('Y-m-d', strtotime('19 Dec 1997')),
@@ -60,8 +74,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Drama, Romance',
         ]);
 
+        $genres = Genre::whereIn('name', ['Drama','Romance'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Avatar',
             'release_date' => date('Y-m-d', strtotime('18 Dec 2009')),
@@ -72,8 +91,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Action, Adventure, Fantasy',
         ]);
 
+        $genres = Genre::whereIn('name', ['Action','Adventure','Fantasy'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Forrest Gump',
             'release_date' => date('Y-m-d', strtotime('06 Jul 1994')),
@@ -84,8 +108,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Drama, Romance',
         ]);
 
+        $genres = Genre::whereIn('name', ['Drama', 'Romance'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'The Matrix',
             'release_date' => date('Y-m-d', strtotime('31 Mar 1999')),
@@ -96,8 +125,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Action, Sci-Fi',
         ]);
 
+        $genres = Genre::whereIn('name', ['Action','Sci-Fi'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Pulp Fiction',
             'release_date' => date('Y-m-d', strtotime('14 Oct 1994')),
@@ -108,8 +142,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Crime, Drama',
         ]);
 
+        $genres = Genre::whereIn('name', ['Crime','Drama'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Gladiator',
             'release_date' => date('Y-m-d', strtotime('05 May 2000')),
@@ -120,8 +159,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Action, Adventure, Drama',
         ]);
 
+        $genres = Genre::whereIn('name', ['Action','Adventure','Drama'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Jurassic Park',
             'release_date' => date('Y-m-d', strtotime('11 Jun 1993')),
@@ -132,8 +176,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Action, Adventure, Sci-Fi',
         ]);
 
+        $genres = Genre::whereIn('name', ['Action','Adventure','Sci-Fi'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Interstellar',
             'release_date' => date('Y-m-d', strtotime('07 Nov 2014')),
@@ -144,8 +193,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Adventure, Drama, Sci-Fi',
         ]);
 
+        $genres = Genre::whereIn('name', ['Adventure','Drama','Sci-Fi'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'The Lion King',
             'release_date' => date('Y-m-d', strtotime('24 Jun 1994')),
@@ -156,8 +210,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Animation, Adventure, Drama',
         ]);
 
+        $genres = Genre::whereIn('name', ['Animation','Adventure','Drama'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Avengers: Endgame',
             'release_date' => date('Y-m-d', strtotime('26 Apr 2019')),
@@ -168,8 +227,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Action, Adventure, Sci-Fi',
         ]);
 
+        $genres = Genre::whereIn('name', ['Action','Adventure','Sci-Fi'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'The Lord of the Rings: The Return of the King',
             'release_date' => date('Y-m-d', strtotime('17 Dec 2003')),
@@ -180,8 +244,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Adventure, Drama, Fantasy',
         ]);
 
+        $genres = Genre::whereIn('name', ['Adventure','Drama','Fantasy'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Maclunkey Treasure Island: A Live Staged Reading of Star Wars - A New Hope',
             'release_date' => date('Y-m-d', strtotime('15 Mar 2025')),
@@ -192,8 +261,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Comedy',
         ]);
 
+        $genres = Genre::whereIn('name', ['Comedy'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => 'Frozen',
             'release_date' => date('Y-m-d', strtotime('27 Nov 2013')),
@@ -204,8 +278,13 @@ class MovieSeeder extends Seeder
             'genre' => 'Animation, Adventure, Comedy',
         ]);
 
+        $genres = Genre::whereIn('name', ['Animation','Adventure','Comedy'])->get();
+        $movie->genres()->attach($genres);
 
-        Movie::create([
+
+
+
+        $movie = Movie::create([
 
             'title' => "Harry Potter and the Sorcerer's Stone",
             'release_date' => date('Y-m-d', strtotime('16 Nov 2001')),
@@ -215,5 +294,10 @@ class MovieSeeder extends Seeder
             'actors' => 'Daniel Radcliffe, Rupert Grint, Emma Watson',
             'genre' => 'Adventure, Family, Fantasy',
         ]);
+
+        $genres = Genre::whereIn('name', ['Adventure','Family','Fantasy'])->get();
+        $movie->genres()->attach($genres);
+
+
     }
 }

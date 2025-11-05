@@ -74,13 +74,17 @@
                         >
 
 
-                        <label>genre:</label>
-                        <input 
-                            type="text"
-                            id="genre"
-                            name="genre"
-                            value="{{ old('genre', $movie['genre'] ?? '') }}"
-                        >
+                        <label>Genre:</label>
+                        <select name="genre[]" id="genre" multiple size="6">
+                            @foreach($allGenres as $genre)
+                                <option value="{{ $genre->name }}"
+                                    @selected(in_array($genre->name, $movie['genre'] ?? []))>
+                                    {{ $genre->name }}
+                                </option>
+                            @endforeach
+                        </select>
+
+
                     </div>
                     
                     <div class="section">

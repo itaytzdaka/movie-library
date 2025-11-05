@@ -54,8 +54,8 @@ class OmdbService
         $genres = [];
 
         if (!empty($d['Genre']) && $d['Genre'] !== 'N/A') {
-            $parts = array_values(array_filter(array_map('trim', explode(',', $d['Genre']))));
-            $genres = implode(', ', $parts);
+            $genres = array_values(array_filter(array_map('trim', explode(',', $d['Genre']))));
+            // $genres = implode(', ', $parts);
         }
 
 

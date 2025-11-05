@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -11,7 +12,7 @@ class MovieController extends Controller
 
     public function index(){
 
-        $movies = Movie::all();
+        $movies = Movie::with('genres')->get();
 
         return view('movies.index', compact('movies'));
     }
@@ -27,7 +28,10 @@ class MovieController extends Controller
 
     public function edit(Movie $movie){
 
-        return view('movies.edit', compact('movie'));
+        $allGenres = Genre::orderBy('name')->get();
+        $selectedGenres = $movie->genres->pluck('id')->toArray();
+
+        return view('movies.edit', compact('movie', 'allGenres', 'selectedGenres'));
     }
 
 
@@ -41,10 +45,14 @@ class MovieController extends Controller
             'director' => ['nullable', 'string', 'max:100'],
             'runtime_minutes' => ['nullable', 'integer', 'min:0'],
             'actors' => ['nullable', 'string'],
-            'genre' => ['nullable', 'string', 'max:255'],
+            // 'genre' => ['nullable', 'string', 'max:255'],
         ]);
 
         $movie->update($validated);
+
+        $genres = $request->input('genre', []);
+        $genreIds = collect($genres)->map(fn($name) => Genre::where('name', $name)->first()?->id)->all();
+        $movie->genres()->sync($genreIds);
 
         return redirect()->route('movies.index')->with('success', 'Movie Updated successfully!');
     }
@@ -54,8 +62,9 @@ class MovieController extends Controller
     public function create(){
 
         $movie = session('movie', null);
+        $allGenres = Genre::orderBy('name')->get();
 
-        return view('movies.create', compact('movie'));
+        return view('movies.create', compact('movie', 'allGenres'));
     }
 
 
@@ -68,10 +77,14 @@ class MovieController extends Controller
             'director' => ['nullable', 'string', 'max:100'],
             'runtime_minutes' => ['nullable', 'integer', 'min:0'],
             'actors' => ['nullable', 'string'],
-            'genre' => ['nullable', 'string', 'max:255'],
+            // 'genre' => ['nullable', 'string', 'max:255'],
         ]);
 
-        Movie::create($validated);
+        $movie = Movie::create($validated);
+
+        $genres = $request->input('genre', []);
+        $genreIds = collect($genres)->map(fn($name) => Genre::where('name', $name)->first()?->id)->all();
+        $movie->genres()->sync($genreIds);
 
         return redirect()->route('movies.index')->with('success', 'Movie Created!');
     }
