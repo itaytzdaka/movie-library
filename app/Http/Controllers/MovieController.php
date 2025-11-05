@@ -18,7 +18,11 @@ class MovieController extends Controller
 
         $movies = Movie::with('genres')->get();
 
-        $movies = $movieService->getMoviesByGenres($genresSelected, matchAll: true);
+        $movies = $movieService
+            ->getMoviesByGenres($genresSelected, matchAll: true)
+            ->orderBy('title')
+            ->paginate(12)
+            ->withQueryString();
 
 
         return view('movies.index', compact('movies', 'genresSelected', 'genres'));

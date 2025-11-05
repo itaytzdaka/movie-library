@@ -13,7 +13,6 @@ class Movie extends Model
         'director',
         'runtime_minutes',
         'actors',
-        'genre',
     ];
 
     public function genres()

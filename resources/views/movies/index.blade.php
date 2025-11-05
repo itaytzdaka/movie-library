@@ -1,6 +1,5 @@
 <x-layout>
-    <div class="container">
-        <h2>Movies</h2>
+    <div class="container column">
 
         <x-genres :genres="$genres" :selected="$genresSelected"/>
         <div class="movies">
@@ -8,5 +7,9 @@
                 <x-card :movie="$movie" />
             @endforeach
         </div>
-    </div>
+
+        {{ $movies->links() }}
+
+    </div>            
 </x-layout>
+

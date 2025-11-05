@@ -37,7 +37,7 @@ class MovieService
             }
         }
 
-        return $query->get();
+        return $query;
     }
 
 }

@@ -1,4 +1,4 @@
-<nav>
+<nav class="nav">
     <div class="container">
         <div>
             <a class="button" href="{{ route('movies.index') }}">home</a>

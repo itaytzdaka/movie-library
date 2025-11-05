@@ -16,16 +16,20 @@ class GenreSeeder extends Seeder
         
         $genres = array_unique([
             'Action',
-            'Crime',
             'Adventure',
-            'Sci-Fi',
-            'Drama',
-            'Romance',
-            'Fantasy',
             'Animation',
+            'Biography',
             'Comedy',
+            'Crime',
+            'Drama',
             'Family',
+            'Fantasy',
             'Horror',
+            'Music',
+            'Romance',
+            'Sci-Fi',
+            'Thriller',
+            'Western',
         ]);
         
         foreach ($genres as $g) {

@@ -10,6 +10,9 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+@import "./nav.css";
+
+
 body{
     display: grid;
     grid-template-rows: auto 1fr;
@@ -26,27 +29,7 @@ h2 {
     @apply text-xl font-semibold my-4;
 }
 
-nav{
-    background-color: rgb(18, 18, 18);
-    color: white;
-    font-weight: bolder;
 
-    div{
-        display: flex;
-        gap: 10px;
-        align-items: center;
-    }
-    
-
-    button:hover, .button:hover{
-        background-color: rgb(29, 29, 29);
-    }
-
-    .container{
-        display: flex;
-        justify-content: space-between;
-    }
-}
 
 table{
     @apply border-separate border-spacing-4 -m-4

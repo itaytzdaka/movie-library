@@ -33,24 +33,9 @@
 
 /* When checkbox is checked */
 .genre-toggle input:checked + span {
-  background-color: #3b82f6; /* blue tone */
-  border-color: #3b82f6;
+  background-color: #c5a400ff; /* blue tone */
+  border-color: #846507ff;
   color: white;
   /* font-weight: 600; */
   box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
-}
-
-/* Optional: "Filter" button style */
-.apply-btn {
-  border: none;
-  background: #10b981;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.apply-btn:hover {
-  background: #0ea374;
 }
