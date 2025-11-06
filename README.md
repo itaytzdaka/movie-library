@@ -52,6 +52,9 @@ npm install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
+    Would you like to create it?
+    │ ● Yes / ○ No                
+php artisan db:seed
 npm run dev
 php artisan serve
 
@@ -63,7 +66,14 @@ http://127.0.0.1:8000
 git clone https://github.com/itaytzdaka/movie-library
 cd movie-library
 cp .env.example .env
+php artisan key:generate
 docker compose up
+
+
+### Admin Login
+
+user: admin
+password: Aa123456
 
 
 
