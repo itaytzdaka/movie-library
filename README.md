@@ -45,6 +45,8 @@ My OMDB_API_KEY exist in env.example
 
 1. **[RUN_WITH_PHP_AND_NPM_commands]**
 
+git clone https://github.com/itaytzdaka/movie-library
+cd movie-library
 composer install
 npm install
 cp .env.example .env
@@ -55,9 +57,11 @@ php artisan serve
 
 http://127.0.0.1:8000
 
+
 2. **[RUN_WITH_DOCKER_COMPOSE]**
 
-
+git clone https://github.com/itaytzdaka/movie-library
+cd movie-library
 cp .env.example .env
 docker compose up
 
