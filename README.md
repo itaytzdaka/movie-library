@@ -1,11 +1,11 @@
-# [MOVIES]
+# MOVIES
 
-> [SHORT_PROJECT_DESCRIPTION] - A small movie library with a simple admin CRUD and a public catalog (grid + details), including **import from OMDb** (by title or IMDb ID).
+> SHORT_PROJECT_DESCRIPTION - A small movie library project.
 
 
 ## Overview
 
-- This project is a task-list web application that allows admin user to create, edit, delete, and manage movies efficiently.
+- A small movie library with a simple admin CRUD and a public catalog (grid + details), including **import from OMDb** (by title or IMDb ID).
 
 
 
