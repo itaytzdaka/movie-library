@@ -1,8 +1,8 @@
 #genre-form {
+  margin: 12px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 12px;
 }
 
 .genre-toggle {
@@ -38,4 +38,12 @@
   color: white;
   /* font-weight: 600; */
   box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
+}
+
+
+@media (max-width: 900px) {
+  .genre-toggle span{
+    font-size: 10px;
+  }
+
 }

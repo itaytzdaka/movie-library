@@ -117,6 +117,8 @@ select option:checked{
     background-color: #333333;
 
     img{
+        aspect-ratio: 2 / 3;
+        height: 500px;
         border-radius: 15px;
     }
 
@@ -177,20 +179,32 @@ select option:checked{
 
 
 @media (max-width: 1220px) {
-  .container {
-    padding: 0 10%;
-  }
+    .container {
+        padding: 0 10%;
+    }
 }
 
 
 @media (max-width: 900px) {
-  .movies {
-    grid-template-columns: repeat(2, 1fr); /* tablets: 2 columns */
-  }
+    .movies {
+        grid-template-columns: repeat(2, 1fr); /* tablets: 2 columns */
+    }
+
+    .form-grid{
+        grid-template-columns: 1fr; /* label | input */
+    }
+
+
 }
 
 @media (max-width: 600px) {
-  .movies {
-    grid-template-columns: repeat(1, 1fr); /* mobile: 1 column */
-  }
+    .movies {
+        grid-template-columns: repeat(1, 1fr); /* mobile: 1 column */
+    }
+
+
+    .row{
+        flex-direction: column;
+        gap: 25px;
+    }
 }
