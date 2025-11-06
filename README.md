@@ -58,7 +58,7 @@ Requirements for building and running the project:
 - npm run dev
 - php artisan serve
 
-http://127.0.0.1:8000
+- http://127.0.0.1:8000
 
 
 2. **Run with docker compose**
