@@ -66,7 +66,6 @@ http://127.0.0.1:8000
 git clone https://github.com/itaytzdaka/movie-library
 cd movie-library
 cp .env.example .env
-php artisan key:generate
 docker compose up
 
 
@@ -75,7 +74,8 @@ docker compose up
 user: admin
 password: Aa123456
 
-
+### Live Demo
+http://98.95.90.26:8000/ (EC2 AWS)
 
 ## Contact
 
