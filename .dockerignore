@@ -1,0 +1,15 @@
+# .git
+# node_modules
+# vendor
+# storage/logs
+# storage/framework/cache/*
+# storage/framework/sessions/*
+# tests
+# docker-compose.yml
+# *.md
+# public/hot
+# public/storage
+# npm-debug.log
+# yarn.lock
+# pnpm-lock.yaml
+bootstrap/cache/*.php
