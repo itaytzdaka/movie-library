@@ -36,12 +36,12 @@ Requirements for building and running the project:
 
 ## Getting Started
 
-- Follow these instructions to set up the project locally and deploy it to your cloud environment.
+- Follow these instructions to set up the project locally.
 
 ### Infrastructure Setup
 
-- You can run this project with docker or by PHP and NPM commands:
-- My OMDB_API_KEY exist in env.example
+- You can run this project with docker or by PHP and NPM commands.
+- My OMDB_API_KEY value exist in env.example
 
 
 1. **Run with PHP and NPM commands**
