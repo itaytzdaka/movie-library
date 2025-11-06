@@ -79,6 +79,6 @@ http://127.0.0.1:8000
 
 ## Contact
 
-- LinkedIn: Itay_Tzdaka 
+- LinkedIn: https://www.linkedin.com/in/itay-tzdaka/
 - Email: itaytzdaka1@gmail.com
 - Project Link: https://github.com/itaytzdaka/movie-library
