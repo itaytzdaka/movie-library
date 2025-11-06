@@ -61,7 +61,7 @@ Requirements for building and running the project:
 http://127.0.0.1:8000
 
 
-2. **[RUN_WITH_DOCKER_COMPOSE]**
+2. **Run with docker compose**
 
 - git clone https://github.com/itaytzdaka/movie-library
 - cd movie-library
@@ -79,6 +79,6 @@ http://127.0.0.1:8000
 
 ## Contact
 
-- Itay_Tzdaka - LinkedIn - itaytzdaka1@gmail.com
-
+- LinkedIn: Itay_Tzdaka 
+- Email: itaytzdaka1@gmail.com
 - Project Link: https://github.com/itaytzdaka/movie-library
